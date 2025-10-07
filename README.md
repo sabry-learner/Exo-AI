@@ -180,12 +180,15 @@ docker-compose up --build
 - Version models semantically (e.g., v1.0.0) with `metadata.json`.
 - Secure secrets with environment variables or secret manager.
 
-## Contributing
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feat/your-feature`.
-3. Add tests and update documentation.
-4. Submit a Pull Request with change details.
+## Contributors  
+Developed by a passionate team of tech enthusiasts for the **NASA Space Apps Challenge 2025**.  
 
+[![Ahmed Hazem](https://img.shields.io/badge/Ahmed%20Hazem-000000?style=for-the-badge&logo=github)](https://github.com/a7medhazem)  
+[![Ahmed Ragheb](https://img.shields.io/badge/Ahmed%20Ragheb-000000?style=for-the-badge&logo=github)](https://github.com/Ahmed-Ragheb2003)  
+[![Mostafa Samer](https://img.shields.io/badge/Mostafa%20Samer-000000?style=for-the-badge&logo=github)](https://github.com/mstfasmir)  
+[![Ahmed Ismail](https://img.shields.io/badge/Ahmed%20Ismail-000000?style=for-the-badge&logo=github)](https://github.com/A28-Cs)  
+[![Hamdi Mahmoud](https://img.shields.io/badge/Hamdi%20Mahmoud-000000?style=for-the-badge&logo=github)](https://github.com/hamdimahmoud)  
+[![Ahmed Sabry](https://img.shields.io/badge/Ahmed%20Sabry-000000?style=for-the-badge&logo=github)](https://github.com/sabry-learner)
 
 ---
 
