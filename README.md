@@ -26,32 +26,166 @@ It provides researchers and students with direct access to NASA’s datasets thr
 
 ---
 
+## Screenshots & Description
+
+### 🚀 Launch Screen
+![Launch](/Images/lanuch.png)  
+*Initial splash screen displaying ExoAI’s logo and entry point to the system.*
+
+---
+
+### 🧾 Sign-Up Screen
+![Sign-Up](/Images/sign-up.png)  
+*Allows new users to create an account securely before accessing the platform.*
+
+---
+
+### 🔐 Login Screen
+![Login](/Images/login.png)  
+*Secure login screen for registered users to access their dashboards.*
+
+---
+
+### 📊 Dashboard
+![Dashboard](/Images/home.png)  
+*Main dashboard showing real-time Kepler data insights, statistics, and prediction summaries.*
+
+---
+
+### 📤 Upload Screen
+![Upload](/Images/upload.png)  
+*Upload interface for users to submit new datasets in CSV/JSON format for prediction.*
+
+---
+
+### 📈 Result Screen
+![Result](/Images/result.png)  
+*Displays prediction results with confidence scores and visual data insights.*
+
+---
+
+## Navigation
+Includes sections for:
+- **Home:** Overview and statistics  
+- **Upload:** Dataset input and model execution  
+- **Result:** Prediction outputs and analytics  
+- **Settings:** Model configuration (learning rate, dropout rate, etc.)  
+- **Logout:** Secure session termination
+
 ## Tech Stack
 **Python**, **scikit-learn**, **XGBoost**, **.NET 9**, **Entity Framework Core**, **Flutter**, **Docker**, **NASA Exoplanet Archive**
 
-## Our Demo Project
-ExoAI showcases its capabilities through the following screenshots:
 
-![Dashboard](https://github.com/user-attachments/assets/e73ce1b1-4ac6-4467-93ba-b94737c824d0)
-*Real-time analysis dashboard with Kepler data statistics.*
 
-![Launch Screen](https://github.com/user-attachments/assets/8eb38581-db42-4e50-bc25-39aaa4a17a9d)
-*Welcome screen with account creation and login options.*
 
-![Menu](https://github.com/user-attachments/assets/28f2fb79-f6ad-460b-a15e-6406fdc8f7ff)
 *Navigation menu for Home, Upload, Result, Settings, and Logout.*
 
-![NASA Branding](https://github.com/user-attachments/assets/0a134ddb-3056-411d-aa6f-33ee2753b36e)
-*ExoAI branding with NASA logo.*
-
-![Settings](https://github.com/user-attachments/assets/b81f2a0a-995b-4253-99f9-76a76a54c478)
 *Model configuration options for learning rate, dropout rate, batch size, and training epochs.*
 
-![Upload Transit Data](https://github.com/user-attachments/assets/08e05f7b-2342-4e0f-9197-13934208320d)
-*Interface for uploading CSV/TSV files for classification.*
+## Repository Structure
+```
+Exo-AI/
+├── Exo.API/                # .NET 9 Web API
+│   ├── Controllers/        # API endpoints
+│   ├── Entities/          # Data models
+│   ├── DTOs/              # Data transfer objects
+│   ├── Data/              # EF Core DbContext, Migrations
+│   ├── Services/          # Business logic, ML integration
+│   ├── Program.cs
+│   ├── appsettings.json
+│   └── Dockerfile
+├── Exo.ML/                # Machine learning code & models
+│   ├── data/              # raw/, processed/
+│   ├── preprocessing/     # Data preprocessing scripts
+│   ├── training/          # Training scripts
+│   │   └── train.py
+│   ├── inference/         # Inference scripts
+│   │   └── predict.py
+│   ├── models/            # Exported models (pkl/json)
+│   └── requirements.txt
+├── Exo.Flutter/           # Flutter web dashboard
+│   ├── lib/               # Flutter source code
+│   │   ├── screens/       # UI screens
+│   │   ├── widgets/       # Reusable components
+│   │   └── services/      # API client
+│   ├── pubspec.yaml
+│   └── web/
+├── Images/                # README screenshots
+├── docker-compose.yml     # Multi-container setup
+├── .env.example           # Environment variable template
+├── .gitignore             # Git ignore rules
+├── LICENSE                # MIT License
+└── README.md              # This file
+```
 
-![Sign Up](https://github.com/user-attachments/assets/d99b2bfd-55a0-4375-9f6e-b81eea14d8b2)
-*Sign-up form for new users.*
+## Quickstart
+
+### 1. Backend (.NET API)
+```bash
+cd Exo.API
+dotnet restore
+dotnet build
+dotnet run --urls "http://localhost:5000"
+# or with Docker
+docker build -t exo-api .
+docker run -e ASPNETCORE_ENVIRONMENT=Production -p 5000:80 exo-api
+```
+
+**Environment Variables** (see `.env.example`):
+```
+ASPNETCORE_ENVIRONMENT=Development
+ConnectionStrings__DefaultConnection=Server=.;Database=ExoAiDb;Trusted_Connection=True;
+Jwt__Key=your_super_secret_key_here
+```
+
+### 2. ML Module (Python)
+```bash
+cd Exo.ML
+python -m venv .venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+pip install -r requirements.txt
+python training/train.py   # Trains and saves model to models/
+```
+
+**train.py**:
+- Loads raw CSV(s) from `data/`.
+- Performs preprocessing and feature engineering.
+- Trains XGBoost/LogisticRegression.
+- Exports model to `models/` with `metadata.json` (metrics, hyperparameters).
+
+### 3. Frontend (Flutter Web)
+```bash
+cd Exo.Flutter
+flutter pub get
+flutter run -d chrome
+```
+
+Configure API URL in `lib/services/api_client.dart`.
+
+### 4. Docker Compose (Optional)
+```bash
+docker-compose up --build
+```
+
+## Usage Workflow
+1. Register/login via Flutter dashboard.
+2. Upload dataset (CSV/JSON) → sent to API.
+3. API processes data via ML module, returns predictions + confidence.
+4. View results, inspect feature importance, retrain with new hyperparameters.
+5. Save retrained model for future inference.
+
+## Configuration & Best Practices
+- Store large datasets/models externally (e.g., Git LFS).
+- Use CI (e.g., GitHub Actions) for tests and validation.
+- Version models semantically (e.g., v1.0.0) with `metadata.json`.
+- Secure secrets with environment variables or secret manager.
+
+## Contributing
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feat/your-feature`.
+3. Add tests and update documentation.
+4. Submit a Pull Request with change details.
+
 
 ---
 
