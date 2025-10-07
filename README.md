@@ -187,7 +187,7 @@ Developed by a passionate team of tech enthusiasts for the **NASA Space Apps Cha
 [![Ahmed Ragheb](https://img.shields.io/badge/Ahmed%20Ragheb-000000?style=for-the-badge&logo=github)](https://github.com/Ahmed-Ragheb2003)  
 [![Mostafa Samer](https://img.shields.io/badge/Mostafa%20Samer-000000?style=for-the-badge&logo=github)](https://github.com/mstfasmir)  
 [![Ahmed Ismail](https://img.shields.io/badge/Ahmed%20Ismail-000000?style=for-the-badge&logo=github)](https://github.com/A28-Cs)  
-[![Hamdi Mahmoud](https://img.shields.io/badge/Hamdi%20Mahmoud-000000?style=for-the-badge&logo=github)](https://github.com/hamdimahmoud)  
+[![Hamdi Elsherbiny](https://img.shields.io/badge/Hamdi%20Mahmoud-000000?style=for-the-badge&logo=github)](https://github.com/hamdimahmoud)  
 [![Ahmed Sabry](https://img.shields.io/badge/Ahmed%20Sabry-000000?style=for-the-badge&logo=github)](https://github.com/sabry-learner)
 
 ---
